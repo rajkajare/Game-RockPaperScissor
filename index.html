@@ -5,36 +5,41 @@
         <link rel="stylesheet" href="styles/general.css">
     </head>
     <body>
-        <p class="title">Rock Paper Scissor</p>
+        <div class="main">
+            <p class="title">Rock Paper Scissor</p>
 
-        <button onclick="
-            playGame('Rock')
-        " class="option-button"><img src="images/Rock-emoji.png"></button>
+            <div class="submain">
+                <button onclick="
+                    playGame('Rock')
+                " class="option-button"><img src="images/Rock-emoji.png"></button>
 
-        <button onclick="
-            playGame('Paper')
-        " class="option-button"><img src="images/Paper-emoji.png"></button>
+                <button onclick="
+                    playGame('Paper')
+                " class="option-button"><img src="images/Paper-emoji.png"></button>
 
-        <button onclick="
-            playGame('Scissor')
-        " class="option-button"><img src="images/Scissor-emoji.png"></button>
+                <button onclick="
+                    playGame('Scissor')
+                " class="option-button"><img src="images/Scissor-emoji.png"></button>
+            </div>
 
-        <p class="js-result result"></p>
-        <p class="js-scene scene"></p>
-        <p class="js-score score"></p>
+            <p class="js-result result"></p>
+            <div class="js-scene scene box-scene"></div>
+            <p class="js-score score"></p>
 
-        <button onclick="
-            score.wins = 0;
-            score.loses = 0;
-            score.tie = 0;
-            localStorage.removeItem('score');
-            document.querySelector('.js-result')
-                .innerHTML = '';
-            document.querySelector('.js-scene')
-                .innerHTML = '';
-            document.querySelector('.js-score')
-                    .innerHTML = `Wins: ${score.wins}  Loses: ${score.loses}  Tie: ${score.tie}`;
-        " class="reset">Reset</button>
+            <button onclick="
+                score.wins = 0;
+                score.loses = 0;
+                score.tie = 0;
+                localStorage.removeItem('score');
+                document.querySelector('.js-result')
+                    .innerHTML = '';
+                document.querySelector('.js-scene')
+                    .innerHTML = '';
+                document.querySelector('.js-score')
+                        .innerHTML = `Wins: ${score.wins} &nbsp; Loses: ${score.loses} &nbsp; Tie: ${score.tie}`;
+            " class="reset">RESET</button>
+        </div>
+        
 
         <script src="js/general.js"></script>
     </body>

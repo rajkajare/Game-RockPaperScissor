@@ -3,7 +3,7 @@ if (!score) {
     score = {wins:0, loses:0, tie:0};
 } else {
     document.querySelector('.js-score')
-        .innerHTML = `Wins: ${score.wins}  Loses: ${score.loses}  Tie: ${score.tie}`;
+        .innerHTML = `Wins: ${score.wins} &nbsp; Loses: ${score.loses} &nbsp; Tie: ${score.tie}`;
 }
 
 function playGame(yourMove) {
@@ -59,7 +59,7 @@ function playGame(yourMove) {
     document.querySelector('.js-result')
         .innerHTML = result;
     document.querySelector('.js-scene')
-        .innerHTML = `You <img src="images/${yourMove}-emoji.png">         <img src="images/${computerMove}-emoji.png"> Computer`;
+        .innerHTML = `You &nbsp;<img src="images/${yourMove}-emoji.png"> &nbsp;&nbsp;&nbsp; <img src="images/${computerMove}-emoji.png">&nbsp; Computer`;
     document.querySelector('.js-score')
-        .innerHTML = `Wins: ${score.wins}  Loses: ${score.loses}  Tie: ${score.tie}`;
+        .innerHTML = `Wins: ${score.wins} &nbsp; Loses: ${score.loses} &nbsp; Tie: ${score.tie}`;
 }
