@@ -10,15 +10,15 @@
 
             <div class="submain">
                 <button onclick="
-                    playGame('Rock')
+                    playGame('Rock');
                 " class="option-button"><img src="images/Rock-emoji.png"></button>
 
                 <button onclick="
-                    playGame('Paper')
+                    playGame('Paper');
                 " class="option-button"><img src="images/Paper-emoji.png"></button>
 
                 <button onclick="
-                    playGame('Scissor')
+                    playGame('Scissor');
                 " class="option-button"><img src="images/Scissor-emoji.png"></button>
             </div>
 
@@ -26,18 +26,24 @@
             <div class="js-scene scene box-scene"></div>
             <p class="js-score score"></p>
 
-            <button onclick="
-                score.wins = 0;
-                score.loses = 0;
-                score.tie = 0;
-                localStorage.removeItem('score');
-                document.querySelector('.js-result')
-                    .innerHTML = '';
-                document.querySelector('.js-scene')
-                    .innerHTML = '';
-                document.querySelector('.js-score')
-                        .innerHTML = `Wins: ${score.wins} &nbsp; Loses: ${score.loses} &nbsp; Tie: ${score.tie}`;
-            " class="reset">RESET</button>
+            <div>
+                <button onclick="
+                    score.wins = 0;
+                    score.loses = 0;
+                    score.tie = 0;
+                    localStorage.removeItem('score');
+                    document.querySelector('.js-result')
+                        .innerHTML = '';
+                    document.querySelector('.js-scene')
+                        .innerHTML = '';
+                    document.querySelector('.js-score')
+                            .innerHTML = `Wins: ${score.wins} &nbsp; Loses: ${score.loses} &nbsp; Tie: ${score.tie}`;
+                " class="reset">RESET</button>
+
+                <button onclick="
+                    autoplay();
+                " class="js-autoplay autoplay">Autoplay</button>
+            </div>
         </div>
         
 

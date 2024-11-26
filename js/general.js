@@ -6,11 +6,9 @@ if (!score) {
         .innerHTML = `Wins: ${score.wins} &nbsp; Loses: ${score.loses} &nbsp; Tie: ${score.tie}`;
 }
 
-function playGame(yourMove) {
-    let computerMove = '';
-    let result = '';
-
+function pickComputerMove() {
     const value = Math.random();
+    let computerMove = '';
     if (0 <= value && value < 1/3) {
         computerMove = 'Rock';
     } else if (1/3 <= value && value < 2/3) {
@@ -18,6 +16,12 @@ function playGame(yourMove) {
     } else {
         computerMove = 'Scissor';
     }
+    return computerMove;
+}
+
+function playGame(yourMove) {
+    const computerMove = pickComputerMove();
+    let result = '';
 
     if (yourMove === "Rock") {
         if (computerMove === 'Rock') {
@@ -62,4 +66,24 @@ function playGame(yourMove) {
         .innerHTML = `You &nbsp;<img src="images/${yourMove}-emoji.png"> &nbsp;&nbsp;&nbsp; <img src="images/${computerMove}-emoji.png">&nbsp; Computer`;
     document.querySelector('.js-score')
         .innerHTML = `Wins: ${score.wins} &nbsp; Loses: ${score.loses} &nbsp; Tie: ${score.tie}`;
+}
+
+let autoplayButton = document.querySelector('.js-autoplay');
+let isAutoPlaying = false;
+let intervalId;
+
+function autoplay() {
+    if (! isAutoPlaying) {
+        autoplayButton.innerText = "Stop Autoplay"
+        intervalId = setInterval(function() {
+                        let yourMove = pickComputerMove();
+                        playGame(yourMove);
+                    }, 1000);
+        isAutoPlaying = true;
+    } else {
+        autoplayButton.innerText = "Autoplay"
+        clearInterval(intervalId);
+        isAutoPlaying = false;
+    }
+    
 }

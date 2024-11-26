@@ -58,13 +58,16 @@ img {
     margin-bottom: 40px;
 }
 
-.reset {
+.reset,
+.autoplay {
     background-color: white;
     color: black;
     font-size: 20px;
     padding: 10px 50px;
     border: none;
     border-radius: 100px;
+    margin-left: 5px;
+    margin-right: 5px;
     cursor: pointer;
 }
 
@@ -106,7 +109,8 @@ img {
         margin-bottom: 100px;
     }
     
-    .reset {
+    .reset,
+    .autoplay {
         font-size: 40px;
         padding: 20px 100px;
         border-radius: 100px;
